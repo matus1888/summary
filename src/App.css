@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+.wrapper {
+    background-size: cover;
+    background-position: center;
+    background-image: url("./Images/басуха.jpg");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background {
+    min-height: 50vh;
+    position: relative;
+}
+.name {
+    width: max-content;
+    padding: 1rem;
+    background-color: rgba(0, 0, 255, 0.1);
+    border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button {
+    position: absolute;
+    bottom: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mail {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 255, 0.1);
+    border-radius: 10px;
+    margin: 25px;
+    right: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.avatar {
+    position: absolute;
+    left:50%; top: 50%;
+    z-index: 10;
+    margin-left: -160px;
+    margin-top: -160px;
 }
+.circle{
+    border: white solid 5px ;
+}
+.wrapper2{
+    padding: 1vh;
+}
+.large{
+    width: 320px !important;
+    height: 320px !important;
+}
+@media screen and (max-width: 992px){
+    .wrapper {
+        background-size: cover;
+        background-position: center;
+        background-image: url("./Images/басуха.jpg");
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    .background {
+        min-height: 50vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nameBox{
+        display: flex;
+        justify-content: center;
+    }
+    .name {
+        justify-content: center;
+        width: max-content;
+        background-color: rgba(0, 0, 255, 0.1);
+        border-radius: 20px;
+    }
+
+    .button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    .mail {
+        position: relative;
+        background-color: rgba(0, 0, 255, 0.1);
+        border-radius: 10px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .avatar {
+        position: absolute;
+        left:50%; top: 100%;
+        z-index: 10;
+        margin-left: -80px;
+        margin-top: -80px;
+    }
+    .circle{
+        border: white solid 5px ;
+    }
+    .wrapper2{
+        padding: 1vh;
+    }
+    .large{
+        width: 160px !important;
+        height: 160px !important;
+    }
 }
