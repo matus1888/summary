@@ -16,6 +16,8 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ava from "./Images/ava.jpg"
+import MenuItem from "@material-ui/core/MenuItem";
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 
 const useStyles = makeStyles((theme) => {
@@ -23,6 +25,10 @@ const useStyles = makeStyles((theme) => {
         toolbar: {
             color:blueGrey["100"],
             zIndex: 0,
+        },
+        menuItem:{
+          display: "flex",
+            justifyContent: "center",
         },
         gridItem: {
             textAlign: "center",
@@ -38,7 +44,7 @@ function App() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
     let gridSize=isMobile?12:4
-    let paddingSize=isMobile?2:5
+    let paddingSize=isMobile?2:4
     useEffect(()=> {
         window.addEventListener("resize",listenerSize )
         return ()=> {
@@ -48,78 +54,82 @@ function App() {
 
     return (
         <>
-            <div className={"wrapper"}>
-                <div className={"background"}>
-                   <div>
-                       <Box color={"text.primary"} className={"nameBox"} p={paddingSize}>
-                           <Typography align={"left"} className={'name'} style={{color: "white"}} variant={"h5"}>Matusew
-                               Alexandr
-                               <Typography variant={"body2"}>frontend developer</Typography>
-                           </Typography>
-                       </Box>
-                       <Box className={"button"} p={paddingSize}>
-                           <Button size={"small"} variant={"contained"} color={"primary"}>
-                               Download my resume
-                           </Button>
-                       </Box>
-                       <Box className={"mail"} p={paddingSize}>
-                           <Typography variant={"body2"} style={{color: "white"}}>
-                               matus1888@gmail.com
-                           </Typography>
-                       </Box>
-                       <Box className={"avatar"}>
-                           <Avatar  className={`circle large`}>
-                               <img src={ava} className={"large"} alt="avatar"/>
-                           </Avatar>
-                       </Box>
-                   </div>
+            <div className={"root"}>
+            <div>
+                <div className={"wrapper"}>
+                    <div className={"background"}>
+                        <div>
+                            <Box color={"text.primary"} className={"nameBox"} p={paddingSize}>
+                                <Typography align={"left"} className={'name'} style={{color: "white"}} variant={"h5"}>Matusew
+                                    Alexandr
+                                    <Typography variant={"body2"}>frontend developer</Typography>
+                                </Typography>
+                            </Box>
+                            <Box className={"button"} p={paddingSize}>
+                                <Button size={"small"} variant={"contained"} color={"primary"}>
+                                    <GetAppIcon/>Download my resume
+                                </Button>
+                            </Box>
+                            <Box className={"mail"} p={paddingSize}>
+                                <Typography variant={"body2"} style={{color: "white"}}>
+                                    matus1888@gmail.com
+                                </Typography>
+                            </Box>
+                            <Box className={"avatar"}>
+                                <Avatar  className={`circle large`}>
+                                    <img src={ava} className={"large"} alt="avatar"/>
+                                </Avatar>
+                            </Box>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <AppBar position={"sticky"}  className={classes.toolbar}>
-                <Toolbar>
-                    <Grid container spacing={3}>
-                        <Grid item className={classes.gridItem} xs={4}>
-                            Menu one
+                <AppBar position={"sticky"}  className={classes.toolbar}>
+                    <Toolbar>
+                        <Grid container spacing={3}>
+                            <Grid item className={classes.gridItem} xs={4}>
+                              <MenuItem className={classes.menuItem} button>Menu one</MenuItem>
+                            </Grid>
+                            <Grid item className={classes.gridItem} xs={4}></Grid>
+                            <Grid item className={classes.gridItem} xs={4}>
+                               <MenuItem className={classes.menuItem} button>Menu two</MenuItem>
+                            </Grid>
                         </Grid>
-                        <Grid item className={classes.gridItem} xs={4}></Grid>
-                        <Grid item className={classes.gridItem} xs={4}>
-                            Menu two
+                    </Toolbar>
+                </AppBar>
+                <div style={{backgroundColor:"rgba(128,128,128,0.8)"}}>
+                    <Grid container spacing={2} className={"wrapper2"}>
+                        <Grid item xs={gridSize}>
+                            <AppCard title={"Образование"}/>
+                        </Grid>
+                        <Grid item xs={gridSize}>
+                            <AppCard title={"Навыки"}  />
+                        </Grid>
+                        <Grid item xs={gridSize}>
+                            <AppCard title={"Опыт"} />
                         </Grid>
                     </Grid>
-                </Toolbar>
-            </AppBar>
-            <div style={{backgroundColor:"rgba(128,128,128,0.8)"}}>
-                <Grid container spacing={2} className={"wrapper2"}>
-                    <Grid item xs={gridSize}>
-                        <AppCard title={"Образование"}/>
+                    <Grid container spacing={2} className={"wrapper2"}>
+                        <Grid item xs={gridSize}>
+                            <AppCard title={"Технологии"}/>
+                        </Grid>
+                        <Grid item xs={gridSize}>
+                            <AppCard title={"Проекты"} />
+                        </Grid>
                     </Grid>
-                    <Grid item xs={gridSize}>
-                        <AppCard title={"Навыки"}  />
-                    </Grid>
-                    <Grid item xs={gridSize}>
-                        <AppCard title={"Опыт"} />
-                    </Grid>
-                </Grid>
-                <Grid container spacing={2} className={"wrapper2"}>
-                    <Grid item xs={gridSize}>
-                        <AppCard title={"Технологии"}/>
-                    </Grid>
-                    <Grid item xs={gridSize}>
-                        <AppCard title={"Проекты"} />
-                    </Grid>
-                </Grid>
+                </div>
+                <BottomNavigation
+                    value={value}
+                    onChange={(event, newValue) => {
+                        setValue(newValue);
+                    }}
+                    showLabels
+                >
+                    <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+                    <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+                    <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+                </BottomNavigation>
             </div>
-            <BottomNavigation
-                value={value}
-                onChange={(event, newValue) => {
-                    setValue(newValue);
-                }}
-                showLabels
-            >
-                <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-                <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-                <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-            </BottomNavigation>
+        </div>
         </>
     );
 }
