@@ -1,0 +1,25 @@
+.skillBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skillBox img {
+    width: 32px;
+    margin-right: 8px;
+}
+
+@media screen and (max-width: 992px) {
+    .skillBox {
+        display: block;
+    }
+
+    .skillBox img {
+        width: 32px;
+        margin-right: 8px;
+
+    }
+    .skillBox button {
+        margin: 5px;
+    }
+
+}

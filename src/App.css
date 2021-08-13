@@ -1,3 +1,17 @@
+.txtAligner div{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.txtAligner div span{
+     padding: 5px;
+}
+
+.appStickyBar{
+    padding: 21px;
+    z-index: 500 !important;
+}
+
 .root{
     display: flex;
     justify-content: center;
@@ -32,14 +46,14 @@
     margin: 25px;
     right: 0;
 }
-
 .avatar {
     position: absolute;
     left:50%; top: 50%;
-    z-index: 10;
+    z-index: 999;
     margin-left: -160px;
     margin-top: -160px;
 }
+
 .circle{
     border: white solid 5px ;
 }
@@ -62,7 +76,7 @@
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
     }
     .nameBox{
         display: flex;
@@ -92,7 +106,7 @@
     .avatar {
         position: absolute;
         left:50%; top: 100%;
-        z-index: 10;
+        z-index: 999;
         margin-left: -80px;
         margin-top: -80px;
     }
@@ -105,5 +119,13 @@
     .large{
         width: 160px !important;
         height: 160px !important;
+    }
+
+    .appStickyBar{
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        padding-top: 16px;
+        z-index: 500!important;
     }
 }

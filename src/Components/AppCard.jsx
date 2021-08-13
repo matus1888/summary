@@ -1,36 +1,96 @@
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import CardActions from "@material-ui/core/CardActions";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import React from "react";
-import Paper from "@material-ui/core/Paper";
+import React from 'react';
+import {makeStyles} from '@material-ui/core/styles';
+import clsx from 'clsx';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import Collapse from '@material-ui/core/Collapse';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import {red} from '@material-ui/core/colors';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-const AppCard=(props)=>{
-    return(
-       <Paper>
-           <Card>
-               <CardContent>
-                   <Typography  color="textSecondary" gutterBottom>
-                       {props.title||"Заголовок"}
-                   </Typography>
-                   <Typography variant="h5" component="h2">
-                       Lorem ipsum dolor sit amet.
-                   </Typography>
-                   <Typography  color="textSecondary">
-                       adjective
-                   </Typography>
-                   <Typography variant="body2" component="p">
-                       well meaning and kindly.
-                       <br />
-                       {'"a benevolent smile"'}
-                   </Typography>
-               </CardContent>
-               <CardActions>
-                   <Button size="small">Learn More</Button>
-               </CardActions>
-           </Card>
-       </Paper>
-    )
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        height: "100%",
+        maxWidth: "auto"
+    },
+    media: {
+        height: 0,
+        paddingTop: '56.25%', // 16:9
+    },
+    cardContent:{
+        alignContent:"end",
+        display:'flex',
+    },
+    expand: {
+        transform: 'rotate(0deg)',
+        marginLeft: 'auto',
+        transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.shortest,
+        }),
+    },
+    expandOpen: {
+        transform: 'rotate(180deg)',
+    },
+    avatar: {
+        backgroundColor: red[500],
+    },
+}));
+
+export default function AppCard(props) {
+    const classes = useStyles();
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
+    return (
+        <Card className={classes.root}>
+            <CardHeader
+                title={props.data.title}
+                subheader={props.data.subheader}
+            />
+            <CardMedia
+                className={classes.media}
+                image={props.data.image}
+                title={props.data.imageTitle}
+            />
+            <CardContent className={classes.cardContent}>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    {props.data.briefContentDescription}
+                </Typography>
+                <IconButton
+                    className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                    })}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="Читать целиком"
+                >
+                    <ExpandMoreIcon />
+                </IconButton>
+            </CardContent>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <Typography paragraph>{props.data.description}</Typography>
+                    <Typography paragraph>
+                        {props.data.text.p1}
+                    </Typography>
+                    <Typography paragraph>
+                        {props.data.text.p2}
+                    </Typography>
+                    <Typography paragraph>
+                        {props.data.text.p3}
+                    </Typography>
+                    <Typography>
+                        {props.data.text.p4}
+                    </Typography>
+                </CardContent>
+            </Collapse>
+        </Card>
+    );
 }
-export default AppCard
