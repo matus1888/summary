@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import AppCard from "./Components/AppCard";
-import ava from "./Images/ava.jpg"
+import ava from "./Images/ava2.jpg"
 import GetAppIcon from '@material-ui/icons/GetApp';
 import {myData} from "./Components/myInfo";
 import LeftMenu from "./Components/LeftMenu";
@@ -18,6 +18,8 @@ import SkillsBox from "./Components/SkillsBox";
 import AppBar from '@material-ui/core/AppBar';
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
+import blue from "@material-ui/core/colors/blue"
+import green from "@material-ui/core/colors/green";
 
 
 function App() {
@@ -43,13 +45,13 @@ function App() {
                             <div>
                                 <Box color={"text.primary"} className={"nameBox"} p={paddingSize}>
                                     <Typography align={"left"} className={'name'} style={{color: "white"}}
-                                                variant={"h5"}>Matusew
-                                        Alexandr
+                                                variant={"h5"}>Matusev
+                                        Alexander
                                         <Typography variant={"body2"}>frontend developer</Typography>
                                     </Typography>
                                 </Box>
                                 <Box className={"button"} p={paddingSize}>
-                                    <Button onClick={()=>window.open("/resume.pdf", '_blank')}
+                                    <Button onClick={()=>window.open("/summary/resume.pdf", '_blank')}
                                         size={"small"} variant={"contained"} color={"primary"}>
                                         <GetAppIcon/>Download my resume
                                     </Button>
@@ -99,8 +101,10 @@ function App() {
                         <div style={{display:"flex", justifyContent:"center"}}>
                         <div className={'txtAligner'}>
                             <div><MailIcon fontSize={"large"} /><span> matus1888@gmail.com</span></div>
-                            <div><TelegramIcon fontSize={"large"} /><span> +79654748370</span></div>
-                            <div><WhatsAppIcon fontSize={"large"} /><span> @matus1888</span>
+                            <div onClick={()=>document.location.assign("https://t.me/matus1888")}
+                            ><TelegramIcon style={{color:blue[300],cursor:"pointer"}} fontSize={"large"} /><span> @matus1888</span></div>
+                            <div onClick={()=>document.location.assign("https://wa.me/+79654748370")}
+                            ><WhatsAppIcon style={{color:green[400],cursor:"pointer"}} fontSize={"large"} /><span>+79654748370 </span>
                             </div>
                         </div>
                         </div>

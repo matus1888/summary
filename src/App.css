@@ -50,8 +50,8 @@
     position: absolute;
     left:50%; top: 50%;
     z-index: 999;
-    margin-left: -160px;
-    margin-top: -160px;
+    margin-left: -200px;
+    margin-top: -200px;
 }
 
 .circle{
@@ -61,8 +61,8 @@
     padding: 1vh;
 }
 .large{
-    width: 320px !important;
-    height: 320px !important;
+    width: 400px !important;
+    height: 400px !important;
 }
 @media screen and (max-width: 992px){
     .wrapper {
