@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/summary/static/css/main.0f896f1d.chunk.css",
-    "main.js": "/summary/static/js/main.a682babd.chunk.js",
-    "main.js.map": "/summary/static/js/main.a682babd.chunk.js.map",
-    "runtime-main.js": "/summary/static/js/runtime-main.0ea7b5a5.js",
-    "runtime-main.js.map": "/summary/static/js/runtime-main.0ea7b5a5.js.map",
-    "static/js/2.c3bac380.chunk.js": "/summary/static/js/2.c3bac380.chunk.js",
-    "static/js/2.c3bac380.chunk.js.map": "/summary/static/js/2.c3bac380.chunk.js.map",
-    "static/js/3.21ebc9af.chunk.js": "/summary/static/js/3.21ebc9af.chunk.js",
-    "static/js/3.21ebc9af.chunk.js.map": "/summary/static/js/3.21ebc9af.chunk.js.map",
+    "main.js": "/summary/static/js/main.2a3257b4.chunk.js",
+    "main.js.map": "/summary/static/js/main.2a3257b4.chunk.js.map",
+    "runtime-main.js": "/summary/static/js/runtime-main.8e77cb47.js",
+    "runtime-main.js.map": "/summary/static/js/runtime-main.8e77cb47.js.map",
+    "static/js/2.e30ea71d.chunk.js": "/summary/static/js/2.e30ea71d.chunk.js",
+    "static/js/2.e30ea71d.chunk.js.map": "/summary/static/js/2.e30ea71d.chunk.js.map",
+    "static/js/3.451041a5.chunk.js": "/summary/static/js/3.451041a5.chunk.js",
+    "static/js/3.451041a5.chunk.js.map": "/summary/static/js/3.451041a5.chunk.js.map",
     "index.html": "/summary/index.html",
     "static/css/main.0f896f1d.chunk.css.map": "/summary/static/css/main.0f896f1d.chunk.css.map",
-    "static/js/2.c3bac380.chunk.js.LICENSE.txt": "/summary/static/js/2.c3bac380.chunk.js.LICENSE.txt",
+    "static/js/2.e30ea71d.chunk.js.LICENSE.txt": "/summary/static/js/2.e30ea71d.chunk.js.LICENSE.txt",
     "static/media/CSS.18e6ff14.png": "/summary/static/media/CSS.18e6ff14.png",
     "static/media/HTML.2df456c4.png": "/summary/static/media/HTML.2df456c4.png",
     "static/media/admin.c55eaa61.jpg": "/summary/static/media/admin.c55eaa61.jpg",
-    "static/media/ava.e54a4e80.jpg": "/summary/static/media/ava.e54a4e80.jpg",
+    "static/media/ava2.a26c26a1.jpg": "/summary/static/media/ava2.a26c26a1.jpg",
     "static/media/binance.95645570.jpg": "/summary/static/media/binance.95645570.jpg",
     "static/media/bootstrap.35904b2f.png": "/summary/static/media/bootstrap.35904b2f.png",
     "static/media/es6.21d34f53.svg": "/summary/static/media/es6.21d34f53.svg",
@@ -28,9 +28,9 @@
     "static/media/App.css": "/summary/static/media/басуха.9eac9568.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0ea7b5a5.js",
-    "static/js/2.c3bac380.chunk.js",
+    "static/js/runtime-main.8e77cb47.js",
+    "static/js/2.e30ea71d.chunk.js",
     "static/css/main.0f896f1d.chunk.css",
-    "static/js/main.a682babd.chunk.js"
+    "static/js/main.2a3257b4.chunk.js"
   ]
 }
