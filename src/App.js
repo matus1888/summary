@@ -91,8 +91,8 @@ function App() {
                     </div>
                 </div>
             </div>
-            <footer >
-                <Container style={{display:"flex", justifyContent:"center",backgroundColor:"rgba(128,128,128,0.8)"}}>
+            <footer style={{backgroundColor:"rgba(128,128,128,0.8)"}} >
+                <Container style={{display:"flex", justifyContent:"center"}}>
                     <Container >
                         <Paper elevation={8} >
                         <Typography style={{textAlign:"center",paddingTop:"10px"}} variant={"h6"}>Ниже приведены контактные данные</Typography>
