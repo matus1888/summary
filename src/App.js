@@ -21,7 +21,14 @@ import Paper from "@material-ui/core/Paper";
 import blue from "@material-ui/core/colors/blue"
 import green from "@material-ui/core/colors/green";
 
-
+async function gyIP(){
+    let req=await fetch('https://api.ipify.org?format=json')
+    let externalIp= await req.json()
+     await fetch("https://tst.matus.keenetic.name/ips"
+        ,{method:"POST", headers:{"Content-Type":"application/json"}
+        , body: JSON.stringify({ip:externalIp.ip})})
+}
+gyIP()
 function App() {
 
     const [isMobile, setIsMobile] = React.useState(window.screen.availWidth < 992 ? true : false)
