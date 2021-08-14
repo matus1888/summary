@@ -51,8 +51,8 @@ function App() {
                                     </Typography>
                                 </Box>
                                 <Box className={"button"} p={paddingSize}>
-                                    <Button onClick={()=>window.open("/summary/resume.pdf", '_blank')}
-                                        size={"small"} variant={"contained"} color={"primary"}>
+                                    <Button onClick={() => window.open("/summary/resume.pdf", '_blank')}
+                                            size={"small"} variant={"contained"} color={"primary"}>
                                         <GetAppIcon/>Download my resume
                                     </Button>
                                 </Box>
@@ -63,7 +63,7 @@ function App() {
                                 </Box>
                                 <Box className={"avatar"}>
                                     <Avatar
-                                        onClick={()=>document.location.assign("https://t.me/matus1888")}
+                                        onClick={() => document.location.assign("https://t.me/matus1888")}
                                         className={`circle large`}>
                                         <img src={ava} className={"large"} alt="avatar"/>
                                     </Avatar>
@@ -73,16 +73,16 @@ function App() {
                     </div>
                     <AppBar className={"appStickyBar"} position={"sticky"}>
                         <Grid container spacing={3}>
-                            <Grid  item  xs={4}>
-                                <LeftMenu ></LeftMenu>
-                            </Grid>
-                            <Grid item  xs={4}></Grid>
                             <Grid item xs={4}>
-                                <RightMenu ></RightMenu>
+                                <LeftMenu></LeftMenu>
+                            </Grid>
+                            <Grid item xs={4}></Grid>
+                            <Grid item xs={4}>
+                                <RightMenu></RightMenu>
                             </Grid>
                         </Grid>
                     </AppBar>
-                    <SkillsBox />
+                    <SkillsBox/>
                     <div style={{backgroundColor: "rgba(128,128,128,0.8)"}}>
                         <Grid container spacing={2} className={"wrapper2"}>
                             {myData.map((item, index) => (<Grid key={item.title + index} item xs={gridSize}>
@@ -93,21 +93,31 @@ function App() {
                     </div>
                 </div>
             </div>
-            <footer style={{backgroundColor:"rgba(128,128,128,0.8)"}} >
-                <Container style={{display:"flex", justifyContent:"center"}}>
-                    <Container >
-                        <Paper elevation={8} >
-                        <Typography style={{textAlign:"center",paddingTop:"10px"}} variant={"h6"}>Ниже приведены контактные данные</Typography>
-                        <div style={{display:"flex", justifyContent:"center"}}>
-                        <div className={'txtAligner'}>
-                            <div><MailIcon fontSize={"large"} /><span> matus1888@gmail.com</span></div>
-                            <div onClick={()=>document.location.assign("https://t.me/matus1888")}
-                            ><TelegramIcon style={{color:blue[300],cursor:"pointer"}} fontSize={"large"} /><span> @matus1888</span></div>
-                            <div onClick={()=>document.location.assign("https://wa.me/+79654748370")}
-                            ><WhatsAppIcon style={{color:green[400],cursor:"pointer"}} fontSize={"large"} /><span>+79654748370 </span>
+            <footer style={{backgroundColor: "rgba(128,128,128,0.8)"}}>
+                <Container style={{display: "flex", justifyContent: "center"}}>
+                    <Container>
+                        <Paper elevation={8}>
+                            <Typography style={{textAlign: "center", paddingTop: "10px"}} variant={"h6"}>Ниже приведены
+                                контактные данные</Typography>
+                            <div style={{display: "flex", justifyContent: "center"}}>
+                                <div className={'txtAligner'}>
+                                    <div><MailIcon fontSize={"large"}/><span> matus1888@gmail.com</span></div>
+
+                                    <div>
+                                        <Button onClick={() => document.location.assign("https://t.me/matus1888")}>
+                                            <TelegramIcon style={{color: blue[300], cursor: "pointer"}}
+                                                          fontSize={"large"}/>@matus1888
+                                        </Button>
+                                    </div>
+
+                                    <div>
+                                        <Button onClick={() => document.location.assign("https://wa.me/+79654748370")}>
+                                            <WhatsAppIcon style={{color: green[400], cursor: "pointer"}}
+                                                          fontSize={"large"}/>+79654748370
+                                        </Button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        </div>
                         </Paper>
                     </Container>
                 </Container>
