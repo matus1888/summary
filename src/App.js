@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import AppCard from "./Components/AppCard";
-import ava from "./Images/ava2.jpg"
+import ava from "./Images/ava3.jpg"
 import GetAppIcon from '@material-ui/icons/GetApp';
 import {myData} from "./Components/myInfo";
 import LeftMenu from "./Components/LeftMenu";
